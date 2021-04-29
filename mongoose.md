@@ -116,12 +116,6 @@ multi:是否更新找到的所有记录,默认false只更新一条,true为全部
     .slaveOk()
     .hint({ age: 1, name: 1 })
     .run(callback);
-    
-    //现在要分页查询，每页3条，查询第2页
-	//skip 跳过的条数 limit 限制返回的条数 sort排序 1升序 -1 降序
-	PersonModel.find({},{_id:0,name:1},{limit:3,skip:3,sort:{age:1,name:-1}},function(err,docs){
-	    console.log(docs);
-	});
 
 
 
